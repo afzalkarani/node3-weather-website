@@ -1,26 +1,5 @@
 const request = require('request')
 
-// const url='http://api.weatherstack.com/current?access_key=479cbd4e4b1db4751f9c18ed9203576b&query=Dubai'
-
-
-//  request({url:url, json:true},(error, response)=>{
-
-//     if(error)
-//     {
-//      console.log('Unable to connect to weather service')
-//     } else if(response.body.error){
-// console.log('Unable to find location')
-//     }
-
-
-//     else
-//     {
-//         console.log("Current Temparature for " +
-//         response.body.location.name + " is "  + response.body.current.temperature)
-//     }
- 
-//  })
-
 
 const forecast = (latitude,longitude, callback) => {
 
@@ -38,10 +17,7 @@ const forecast = (latitude,longitude, callback) => {
         }
         else
         {
-
-            callback(undefined, {
-                Temperature: body.current.temperature                
-            })
+            callback(undefined, body.current.weather_descriptions[0] + ". The current temparature is " + body.current.temperature + "degrees out. It feels like " + body.current.feelslike + ". Wind speed is " + body.current.wind_speed + " with humidity "  + body.current.humidity + "%. Changes for rain is " + body.current.cloudcover + " %" )
         }
 
     })

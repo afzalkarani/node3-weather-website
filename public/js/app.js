@@ -25,8 +25,7 @@ fetch('/weather?address=' + location ).then((response)=>{
         else
         {
             messageOne.textContent= data.location
-            messageTwo.textContent= data.forecast.Temperature
-            console.log(data.forecast.Temperature)          
+            messageTwo.textContent= data.forecast            
         }
 })
 })
