@@ -1,4 +1,4 @@
-console.log('Client Side functions loading')
+console.log('Client Side functions loading from weather app')
 
 const weatherForm=document.querySelector('form')
 const search=document.querySelector('input')
